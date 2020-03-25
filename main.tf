@@ -68,7 +68,7 @@ resource "aws_cloudwatch_metric_alarm" "no_mfa_console_signin" {
   }
 }
 
-resource "aws_oudwatch_log_metric_filter" "root_usage" {
+resource "aws_cloudwatch_log_metric_filter" "root_usage" {
   count = var.root_usage ? 1 : 0
 
   name           = "RootUsage"
@@ -344,7 +344,7 @@ resource "aws_cloudwatch_metric_alarm" "security_group_changes" {
   insufficient_data_actions = []
 
   tags = {
-    Automation = Terraform
+    Automation = "Terraform"
   }
 }
 
